@@ -17,4 +17,8 @@ the tree."""
 slider_explanation = """Since we know that our decision tree identified the `RM` and `LSTAT` features as most important to predicting the house price,
 we can allow the user to input their own values for these two features and observe how the model's predictions change."""
 
-# prediction_explanation =
+postgres_explanation = """The user may also be interested in seeing the specific datapoints that fall into each leaf of the tree. Since we've 
+connected our postgres database containing the `boston` table to this web app, we can generate the query needed to retrieve those datapoints,
+and even display this data directly from the database.
+
+##### *Note: this query and table will change as the input from the sliders above changes.*"""

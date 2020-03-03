@@ -1,6 +1,15 @@
 import psycopg2
 from sklearn.datasets import load_boston
 import pandas as pd
+from dotenv import find_dotenv, load_dotenv
+import os
+
+# find .env automagically by walking up directories until it's found, then
+# load up the .env entries as environment variables
+load_dotenv(load_dotenv())
+dbname = os.getenv("POSTGRES_DB")
+user = os.getenv("POSTGRES_USER")
+password = os.getenv("POSTGRES_PASSWORD")
 
 # loading and saving boston.csv
 boston = load_boston()
@@ -9,12 +18,11 @@ y = pd.DataFrame(boston.target, columns=["PRICE"])
 df = pd.concat([X, y], axis=1)
 df.to_csv("boston.csv", index=False)
 
-# creating table and loading csv into postgres
-conn = psycopg2.connect(host='postgres',   # made availble by network created automatically by do$
-                       port='5432',        # defined in docker-compose.yml
-                       dbname='streamlit_db',    # defined in postgres.env
-                       user='docker',      # defined in postgres.env
-                       password='docker'   # not sure where defined
+conn = psycopg2.connect(host='postgres',
+                       port='5432',
+                       dbname=dbname,
+                       user=user,
+                       password=password
                         )
 
 cur = conn.cursor()

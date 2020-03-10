@@ -44,7 +44,7 @@ def render_svg(svg):
 if __name__ == "__main__":
     ### loading things up
     text = st.sidebar.title("Built on:")
-    logo = st.sidebar.image("images/streamlit.png")
+    # logo = st.sidebar.image("images/streamlit.png")
     logo = st.sidebar.image("images/aws.png")
     logo = st.sidebar.image("images/docker.png")
 

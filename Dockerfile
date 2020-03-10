@@ -1,14 +1,8 @@
 # base image
-# FROM python:3.7
-FROM ubuntu:18.04
 # a little overkill but need it to install dot cli for dtreeviz
+FROM ubuntu:18.04
 
-# update ubuntu
-# https://stackoverflow.com/questions/45142855/bin-sh-apt-get-not-found
-# install python and pip
-# installing graphviz so dtreeviz package works
-# install nano in case I need it
-# need to install psycopg2
+# ubuntu installing - python, pip, graphviz, nano, libpq (for psycopg2)
 RUN apt-get update &&\
     apt-get install python3.7 -y &&\
     apt-get install python3-pip -y &&\

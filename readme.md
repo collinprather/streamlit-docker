@@ -2,7 +2,7 @@
 
 This repository is featured in a 3-part series on [Deploying web apps with Streamlit, Docker, and AWS](https://collinprather.github.io/blog/docker/aws/2020/03/10/streamlit-docker-pt1.html). Checkout the blog posts!
 
-![](images/app-done.png)
+![](images/app-done.gif)
 
 ---
 
